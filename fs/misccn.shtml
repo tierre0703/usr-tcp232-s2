@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="padding:0px;">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="style2.css" />
+
+</head>
+<style>
+html { overflow-x:hidden; }
+</style>
+<body>
+
+<form action="misc.cgi" method="get">
+
+  <div class="top_content" style="height:auto">
+  <div class="top">
+    <p>参数</p>
+  </div>
+  <table width="100%" border="0" cellpadding="2" cellspacing="2" >
+    <tbody>
+      <tr>
+        <td width="50%" bgcolor="#FFFFFF" class="gr"><div align="right">模块名称：</div></td>
+        <td><div align="left">
+          <!--#modninp-->
+        </div></td>
+      </tr>
+      <tr>
+        <td bgcolor="#FFFFFF" class="gr"><div align="right">网页端口：</div></td>
+        <td><div align="left">
+          <!--#htpprt-->
+        </div></td>
+      </tr>
+      
+      
+      <tr>
+        <td bgcolor="#FFFFFF" class="gr"><div align="right">用户名：</div></td>
+        <td><div align="left">
+            <!--#username-->
+        </div></td>
+      </tr>
+      <tr>
+        <td bgcolor="#FFFFFF" class="gr"><div align="right">密码：</div></td>
+        <td><div align="left">
+            <!--#password-->
+        </div></td>
+      </tr>
+	   <tr>
+        <td bgcolor="#FFFFFF" class="gr"><div align="right">MAC地址：</div></td>
+        <td><div align="left">
+            <!--#macs-->
+        </div></td>
+      </tr>
+	  <tr>
+        <td bgcolor="#FFFFFF" class="gr"><div align="right">TCP server连接客户端数量：</div></td>
+        <td><div align="left">
+          <!--#tnum-->
+          (1~16)</div></td></tr>
+          
+          <tr><td bgcolor="#FFFFFF" class="gr"><div align="right"> 超时重启：</div></td>
+        <td><div align="left">
+          <!--#tiout-->
+         (s)(0,60~65535s)</div></td></tr>
+	  
+    </tbody>
+  </table>
+</div>
+<button class="button" type="submit">保存设置</button>
+<button class="button" type="reset" onclick="window.location.href='misccn.shtml' ">不保存设置</button>
+</form>
+
+	<div id="sidebar">
+      <ul>
+        <li>帮助</li>
+      </ul>
+	  <div id="help"><div align="left">
+	  <ul>
+	  <li id="lia">MAC地址：</li>
+	  <li id="lib">模块的mac地址，可修改，不可写入全F</li>
+	  <li id="lia">TCP Server连接客户端数量:</li>
+	  <li id="lib">模块做TCP Server时，允许连接的Client最大值</li>
+	  <li id="lia">超时重启时间:</li>
+	  <li id="lib">当模块网络端无数据接收时，模块超时重启,如果设置为0s，功能关闭</li>
+	    </ul>
+		</div>
+	  </div>
+    </div>
+	
+</body>
+</html>

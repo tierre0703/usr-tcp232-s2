@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="padding:0px;">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="style2.css" />
+
+</head>
+<style>
+html { overflow-x:hidden; }
+</style>
+<!--#p0vars--><!--#p1tvars--><!--#p0ipvar-->
+<script type="text/javascript" src="cfg.js"></script>
+<body onLoad="SetFormsernet()">
+
+<form  name="config" action="spec.cgi" method="get">
+<input name="sspe" value="0" type="hidden">
+<div class="top_content" style="width：auto; height:auto">
+  <div class="top">
+    <p>parameter</p>
+  </div>
+  <table width="100%" border="0" cellpadding="2" cellspacing="2">
+    <tbody>
+		
+		 <tr>
+        <td bordercolor="#FFFFFF" bgcolor="#FFFFFF" class="gr"><div align="right">Heartbeat Packet Type：</div></td>
+        <td><div align="left">
+          <select size="1" name="hbcho" style="width:130px;" onchange="SetIPheatb();">
+            <option value="0" selected="selected">None</option>
+            <option value="1">UART heartbeat</option>
+            <option value="2">Net heartbeat</option>
+          </select>
+          <select size="1" name="hhex" onchange="SetIPheatb();">
+            <option value="0" selected="selected">ASCII</option>
+            <option value="1" >HEX</option>
+          </select>
+          </div> </td></tr>
+        <tr id=heaconb>
+        <td bgcolor="#FFFFFF" class="gr"><div align="right"> Heartbeat Packet：</div></td>
+        <td><div align="left">
+         <!--#hearhb-->
+       </div></td></tr>
+        <tr id=heacona>
+       <td bgcolor="#FFFFFF" class="gr"><div align="right"> Heartbeat Packet：</div></td>
+        <td><div align="left">
+         <!--#hearas-->
+       </div></td></tr>
+		
+        <tr id=heatime> <td bgcolor="#FFFFFF" class="gr"><div align="right">Heartbeat Time：</div></td>
+        <td><div align="left">
+          <!--#heartt-->
+        (s)(1~65535)</div></td></tr>
+		
+
+		<tr><td bordercolor="#FFFFFF" bgcolor="#FFFFFF" class="gr"><div align="right">Register Packet Type：</div></td>
+        <td><div align="left">
+          <select size="1" name="rbcho" style="width:130px;" onchange="SetIPRegis();">
+            <option value="0" selected="selected">None</option>
+            <option value="1">MAC As Register</option>
+            <option value="2">USER Register</option>
+            <option value="3">Enable USR Cloud</option>
+          </select>
+          </div> </td></tr>
+        
+        <tr id=regtype> <td bordercolor="#FFFFFF" bgcolor="#FFFFFF" class="gr"><div align="right">Registered Direction：</div></td>
+        <td><div align="left">
+          <select size="1" style="width:130px;" name="rbcot" onchange="SetIPRegis();">
+            <option value="0" selected="selected">Connect with</option>
+            <option value="1" >Data With</option>
+            <option value="2">Both of above</option>
+          </select>
+          <select size="1" name="rhex" onchange="SetIPRegis();">
+            <option value="0" selected="selected">ASCII</option>
+            <option value="1" >HEX</option>
+          </select>
+          </div> </td></tr>
+		
+        <tr id=regsconb><td bgcolor="#FFFFFF" class="gr"><div align="right">User Register Packet：</div></td>
+        <td><div align="left">
+         <!--#reghex-->
+       </div></td></tr>
+       
+       <tr id=regscona> <td bgcolor="#FFFFFF" class="gr"><div align="right">User Register Packet：</div></td>
+        <td><div align="left">
+         <!--#regasc-->
+       </div></td></tr>
+       
+        <tr id="cloud1"><td bgcolor="#FFFFFF" class="gr"><div align="right">DeviceId：</div></td>
+        <td><div align="left">
+          <!--#cccid-->
+        </div></td></tr>
+        
+	    <tr id="cloud2"> <td bgcolor="#FFFFFF" class="gr"><div align="right"><div>Communication Code：</div>
+          </div></td>
+        <td><div align="left">
+          <!--#ccpass-->
+        </div></td></tr>
+		
+        <tr><td  bordercolor="#FFFFFF" bgcolor="#FFFFFF" class="gr"><div align="right">impersistent connection：</div></td>
+        <td><div align="left">
+          <input name="srr" id="tcpcs" type="checkbox" value="1" onchange="SetIPStata()" />            
+        </div></td></tr>
+        
+        <tr id=tcpcshort><td bgcolor="#FFFFFF" class="gr"><div align="right">Disconnect Time：</div></td>
+        <td><div align="left">
+         <!--#tcpcsh-->
+         (s)(2~255)
+       </div></td></tr>
+		
+        <tr> <td  bordercolor="#FFFFFF" bgcolor="#FFFFFF" class="gr"><div align="right">TCP Server-kick off old connection：</div></td>
+        <td><div align="left">
+         <input name="srq" type="checkbox" value="1"/>            
+        </div></td></tr>
+		
+        <tr> <td bordercolor="#FFFFFF" bgcolor="#FFFFFF" class="gr"><div align="right">Buffer Data Before Connected：</div></td>
+        <td><div align="left">
+          <input name="srt" type="checkbox" value="1" />            
+        </div></td></tr>
+		
+    </tbody>
+  </table>
+</div>
+
+<button class="button" type="submit">Save</button>
+<button class="button" type="reset" onclick="window.location.href='sernet2.shtml' ">Cancel</button>
+</form>
+
+	<div id="sidebar">
+      <ul>
+        <li>Help</li>
+      </ul>
+	  <div id="help"><div align="left">
+	      <ul>
+		   <li id="lia">Custom Heartbeat Packet：</li>	
+		  <li id="lib">this function is not open,not do support the  Chinese , and 40 bytes in length</li>	
+		  <li id="lia">Custom Register Packet：</li>
+		  <li id="lib">this function is not open,not do support the  Chinese , and 40 bytes in length</li>			
+	      <li id="lia">TCP Server-kick off old connection : </li>
+		  <li id="lib">TCP Server mode, a new connection whether to kick off the old connection,</li>
+		  <li id="lia">Buffer Data Before Connected：</li>
+		  <li id="lib">Before the TCP connection is established, whether the data sent by serial port is cached</li>
+          </ul>
+        </div>
+	  </div>
+	  </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="padding:0px;">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="style2.css" />
+
+</head>
+<style>
+html { overflow-x:hidden; }
+</style>
+<!--#p0vars--><!--#p0tvars--><!--#p0ipvar-->
+<script type="text/javascript" src="cfg.js"></script>
+<body onLoad="SetFormDefaults()">
+
+<form  name="config" action="config.cgi" method="get">
+<input name="port" value="0" type="hidden">
+<div class="top_content" style="width：auto; height:auto">
+  <div class="top">
+    <p>parameter</p>
+  </div>
+  <table width="100%" border="0" cellpadding="2" cellspacing="2">
+    <tbody>
+      <tr>
+        <td width="43%" bordercolor="#FFFFFF" bgcolor="#FFFFFF" class="gr"><div align="right">Baud Rate：</div></td>
+        <td width="57%"><div align="left">
+          <input name="br" id="br" size="8" maxlength="7" />
+          bps</div></td>
+      </tr>
+      <tr>
+        <td bordercolor="#FFFFFF" bgcolor="#FFFFFF" class="gr"><div align="right">Data Size：</div></td>
+        <td><div align="left">
+          <select size="1" name="bc">
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8" selected="selected">8</option>
+          </select>
+          bit</div></td>
+      </tr>
+      <tr>
+        <td bordercolor="#FFFFFF" bgcolor="#FFFFFF" class="gr"><div align="right">Parity：</div></td>
+        <td><div align="left">
+          <select name="parity">
+            <option value="1">None</option>
+            <option value="2">Odd</option>
+            <option value="3">Even</option>
+            <option value="4">Mark</option>
+            <option value="5">Space</option>
+          </select>
+        </div></td>
+      </tr>
+      <tr>
+        <td bordercolor="#FFFFFF" bgcolor="#FFFFFF" class="gr"><div align="right">Stop Bits：</div></td>
+        <td><div align="left">
+          <select size="1" name="stop">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            </select>
+          bit</div></td>
+      </tr>
+      <tr>
+        <td bordercolor="#FFFFFF" bgcolor="#FFFFFF" class="gr"><div align="right">Local  Port Number：</div></td>
+        <td><div align="left">
+          <input maxlength="5" size="6" name="tlp" />
+        (0~65535)</div>
+          <label></label></td>
+      </tr>
+      <tr>
+        <td bordercolor="#FFFFFF" bgcolor="#FFFFFF" class="gr"><div align="right">Remote  Port Number：</div></td>
+        <td><div align="left">
+          <input maxlength="5" size="6" name="trp" />
+        (1~65535)</div></td>
+      </tr>
+      <tr>
+        <td bordercolor="#FFFFFF" bgcolor="#FFFFFF" class="gr"><div align="right">Work Mode：</div></td>
+        <td><div align="left">
+          <select size="1" name="tnmode" onchange="SetIPState();">
+            <option value="0">UDP Client</option>
+            <option value="1" selected="selected">TCP Client</option>
+            <option value="2">UDP Server</option>
+              <option value="3">TCP Server</option>
+			  <option value="4" >Httpd Client</option>
+          </select>
+        </div>          </td>
+      </tr>
+      <tr>
+        <td bordercolor="#FFFFFF" bgcolor="#FFFFFF" class="gr"><div align="right">Remote Server Addr：</div></td>
+        <td><div align="left">
+              <!--#p0url1-->
+         </div>
+         <div align="left">
+         [<!--#p2url1-->]</select> 
+         </div>  
+         </td></tr>
+         
+	  <tr id="htp2">
+        <td bordercolor="#FFFFFF" bgcolor="#FFFFFF" class="gr"><div align="right">Httpd Chose：</div></td>
+        <td><div align="left">
+		<select size="1" name="htpch" onchange="SetIPState();">
+            <option value="0" selected="selected">GET</option>
+            <option value="1">POST</option>
+          </select>
+        </div></td></tr>
+      
+      <tr id="htpurl1">
+        <td bordercolor="#FFFFFF" bgcolor="#FFFFFF" class="gr"><div align="right">Httpd URL(<100byte)：</div></td>
+        <td><label><div align="left">
+            <!--#p0url-->
+        </div> </label></td></tr>
+        
+	   <tr id="htpgh">
+        <td bordercolor="#FFFFFF" bgcolor="#FFFFFF" class="gr"><div align="right">Httpd Header(<200byte)：</div></td>
+        <td><label> <div align="left">
+            <!--#p0hhr-->
+        </div></label></td></tr>
+        
+	  <tr id="htpph">
+        <td bordercolor="#FFFFFF" bgcolor="#FFFFFF" class="gr"><div align="right">Httpd Header(<200byte)：</div></td>
+        <td><label>
+          <div align="left">
+            <!--#p1hhr-->
+          </div></label></td></tr>
+	 <tr id="htp1">
+        <td bordercolor="#FFFFFF" bgcolor="#FFFFFF" class="gr"><div align="right">Remove Httpd  Head：</div></td>
+        <td><div align="left">
+          <input name="htpd" type="checkbox" value="1" />            
+        </div></td></tr>
+        
+      <tr>
+        <td bordercolor="#FFFFFF" bgcolor="#FFFFFF" class="gr"><div align="right">RESET：</div></td>
+        <td><div align="left">
+          <input name="sre" type="checkbox" value="1" />            
+        </div></td></tr>
+      <tr>
+        <td bordercolor="#FFFFFF" bgcolor="#FFFFFF" class="gr"><div align="right">LINK：</div></td>
+        <td><div align="left">
+          <input name="srf" type="checkbox" value="1" />            
+        </div></td></tr>
+      <tr>
+        <td bordercolor="#FFFFFF" bgcolor="#FFFFFF" class="gr"><div align="right">INDEX：</div></td>
+        <td><div align="left">
+          <input name="srg" type="checkbox" value="1" />            
+        </div></td></tr>
+      <tr>
+        <td bordercolor="#FFFFFF" bgcolor="#FFFFFF" class="gr"><div align="right">Similar RFC2217：</div></td>
+        <td><div align="left">
+          <input name="srh" type="checkbox" value="1" />            
+        </div></td></tr>  
+      
+    </tbody>
+  </table>
+</div>
+
+<button class="button" type="submit">Save</button>
+<button class="button" type="reset" onclick="window.location.href='sernet1.shtml' ">Cancel</button>
+</form>
+
+	<div id="sidebar">
+      <ul>
+        <li>Help</li>
+      </ul>
+	  <div id="help">
+	    <div align="left">
+	      <ul>
+          <li id="lia">HTTPD URL：</li>	
+		  <li id="lib">Module add GET/POST and HTTP/1.1 in URL automatically according to user's setting.</li>
+          <li id="lia">•HTTPD  Packet Header：</li>	
+		  <li id="lib">Module add HOST automatically according to user's setting.Add"Content-Length"automatically in POST mode.</li>
+          </ul>
+        </div>
+	  </div>
+	  </div>
+    </div>
+</body>
+</html>

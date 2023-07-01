@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" style="padding:0px;">
+<head>
+<title></title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="style2.css" />
+<script type="text/javascript" language="JavaScript"><!--
+
+function CheckRestart(myForm)
+{
+var answer = confirm("这将会重启模块，您确认要这样做吗?");
+if(answer == false)
+{
+alert("操作已被取消");
+}
+else
+{
+	document.defaultform.submit();
+}
+}
+//-->
+
+</script>
+
+</head>
+<style>
+html { overflow-x:hidden; }
+</style>
+<body>
+
+<form method="get" action="login.cgi" name="defaultform">
+
+<div class="top_content" style="height:auto">
+  <div class="top">
+    <p>重启</p>
+  </div>
+  <table width="100%" border="0" cellpadding="2" cellspacing="2">
+    <tbody>
+      <tr>
+        <td width="50%" bgcolor="#FFFFFF" class="gr">重启模块</td>
+        <td style="text-align: center;"><input name="restart"  onClick="return CheckRestart(document.defaultform);" type="button" value="重启" /></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</form>
+
+<div id="sidebar">
+  <ul>
+    <li>帮助</li>
+  </ul>
+  <div id="help"><div align="left"><ul><li>重新启动模块</li>
+          </ul>
+        </div>
+  </div>
+</div>
+
+</body>
+</html>
