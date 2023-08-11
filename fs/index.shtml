@@ -1,18 +1,18 @@
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>USR-IOT</title>
+<title>SLX_100_IP_RS</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="stylesheet" type="text/css" href="style.css" />
 <!--#jname-->
 <script>
 function changeCss(id){ 
 /*var alist = document.getElementsByClassName("cli");*/
-var li=document.getElementsByTagName("li");
-  	for(var i =0;i < li.length;i++){ 
-	li[i].style.background="";
+var li=document.getElementsByClassName("tab");
+  for(var i =0;i < li.length;i++){ 
+	  li[i].style.color="";
 	}
-	document.getElementById(id).style.background="#ff6600";
+	document.getElementById(id).style.color="#ed6c00";
 }
 function changeTitle(){ 
 //var title=document.getElementById("modname").value;
@@ -30,20 +30,22 @@ function shut(){
 <div id="wrapper">
 
   <div id="top"><div class="top-info">
-    <p>Firmware Version：V<!--#revision--></p>   <a onclick="shut();" style="text-decoration:underline"></a>  <a href="indexcn.shtml?chinese">中文</a></div>
+    <p>Firmware Version：V<!--#revision--></p>   <a onclick="shut();" style="text-decoration:underline"></a> </div>
   </div>
   
   <div id="header">
-    <img src="logo.png"  alt="有人" ></img>
+    <img src="logo.png"  alt="humonoid" height="50"></img>
 	
-	<div id="div1">
-	<h1>USR</h1>
-	<h4>-IOT Experts-</h4>
-	</div>
-	<div id="div2">
-	<i>Be Honest, Do Best! </i>
-	</div>
-	
+    <div id="div1">
+      <!--
+      <h5>SLX_100_IP_RS</h5>
+      <h4>-IOT Experts-</h4>
+      -->
+    </div>
+    <div id="div2">
+      <i>Be Honest, Do Best! </i>
+    </div>
+    
   </div>
   
   <div id="body">
@@ -51,12 +53,12 @@ function shut(){
 	<div id="sidebar2">
       <!-- begin categories -->
       <ul style="border-top-width:0px;">
-	    <li id="5"><a href="initialen.shtml" target="ifrPage" onclick="changeCss('5')">Current Status</a></li>
-        <li id="2"><a href="ipconfigen.shtml" target="ifrPage" onclick="changeCss('2')">Local IP Config</a></li>
-        <li id="3"><a href="sernet1.shtml" target="ifrPage" onclick="changeCss('3')">Serial Port</a></li>
-		<li id="4"><a href="sernet2.shtml" target="ifrPage" onclick="changeCss('4')">Expand Function</a></li>
-        <li id="8"><a href="misc.shtml" target="ifrPage" onclick="changeCss('8')">Misc Config</a></li>
-        <li id="9"><a href="manage.shtml" target="ifrPage" onclick="changeCss('9')">Reboot</a></li>
+	      <li><a id="5" href="initialen.shtml" class="tab" target="ifrPage" onclick="changeCss('5')">Current Status</a></li>
+        <li><a id="2" href="ipconfigen.shtml" class="tab" target="ifrPage" onclick="changeCss('2')">Local IP Config</a></li>
+        <li><a id="3" href="sernet1.shtml" class="tab" target="ifrPage" onclick="changeCss('3')">Serial Port</a></li>
+		    <li><a id="4" href="sernet2.shtml" class="tab" target="ifrPage" onclick="changeCss('4')">Expand Function</a></li>
+        <li><a id="8" href="misc.shtml" class="tab" target="ifrPage" onclick="changeCss('8')">Misc Config</a></li>
+        <li><a id="9" href="manage.shtml" class="tab" target="ifrPage" onclick="changeCss('9')">Reboot</a></li>
       </ul>
       <!-- end meta -->
 
@@ -72,8 +74,8 @@ function shut(){
   <!-- BEGIN footer -->
   <div id="footer">
   <div id="line">
-    <p> Copyright &copy; Jinan USR IOT Technology Limited. All Rights Reserved
-    <div id="left">website:<a href="http://www.usriot.com">www.usriot.com</a></div> 
+    <p> Copyright 2023 &copy; Soleux
+    <div id="left">website:<a href="https://soleux.com">soleux.com</a></div> 
     </p> 
   <div>
   </div>

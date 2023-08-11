@@ -11,19 +11,20 @@ form{
 }
 
 #top_content{
-	border: 2px solid #888888;
+	border: 1px solid #ccc;
 	margin:0;
 	padding:0px;
 }
 	
 #top{
-	background-color: #888888;
+	background-color: #eef0f1;
 }
 	
 
 .top_content{
 	height:100px;
-	border: 2px solid #0067AC;
+	background-color: #fff;
+	border: 2px solid #ccc;
 	margin-top:10px;
 }
 	.top_content div {
@@ -43,8 +44,8 @@ form{
 	}
 	
 .top{
-	background-color: #0067AC;
-	color: white;
+	background-color: #eef0f1;
+	color: #16191C;
 	font-size: 0.9em;
 	/*padding: 5px;*/
 }
@@ -59,8 +60,8 @@ form{
 #sidebar {
 	width: 141px;
 	float: right;
-	background-color:#0067AC;
-	color:white;
+	background-color:#e8ebf2;
+	color:#333333;
 	padding:0px;                     
 }
 	#sidebar ul {
@@ -74,7 +75,7 @@ form{
 			padding-top:8px;
 		}
 		#sidebar div {
-			background-color:#0067AC;
+			background-color:#e8ebf2;
 			border-top: 2px solid #ffffff;
 			height:535px;
 		}
